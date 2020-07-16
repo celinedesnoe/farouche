@@ -10,7 +10,7 @@ const CountDown = ({ date }) => {
 
   useEffect(() => {
     setInterval(() => getTimeUntil(date), 1000);
-  }, []);
+  }, [date]);
 
   const getTimeUntil = (date) => {
     const time = Date.parse(date) - Date.parse(new Date());
@@ -32,12 +32,12 @@ const CountDown = ({ date }) => {
 
   return (
     <div>
-      <div>Bientôt...</div>
-      <div>
+      <div className="counter-container">
         {timer.map((oneCounter) => {
           return (
-            <div>
-              <div> {oneCounter.time} </div> <div> {oneCounter.text}</div>
+            <div className="counter-column" key={oneCounter.text}>
+              <div className="counter-timer"> {oneCounter.time} </div>{" "}
+              <div> {oneCounter.text}</div>
             </div>
           );
         })}
