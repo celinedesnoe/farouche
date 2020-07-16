@@ -31,11 +31,11 @@ const CountDown = ({ date }) => {
   };
 
   return (
-    <div>
-      <div className="counter-container">
+    <div className="container">
+      <div className="counter-container row">
         {timer.map((oneCounter) => {
           return (
-            <div className="counter-column" key={oneCounter.text}>
+            <div className="counter-column col-sm" key={oneCounter.text}>
               <div className="counter-timer"> {oneCounter.time} </div>{" "}
               <div> {oneCounter.text}</div>
             </div>
