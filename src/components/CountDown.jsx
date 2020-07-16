@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 
 const CountDown = ({ date }) => {
-  const [timer, setTimer] = useState({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0,
-  });
+  const [timer, setTimer] = useState([
+    { text: "jours", time: 0 },
+    { text: "heures", time: 0 },
+    { text: "minutes", time: 0 },
+    { text: "secondes", time: 0 },
+  ]);
 
   useEffect(() => {
     setInterval(() => getTimeUntil(date), 1000);
@@ -21,11 +21,29 @@ const CountDown = ({ date }) => {
       const minutes = Math.floor((time / 1000 / 60) % 60);
       const hours = Math.floor((time / (1000 * 60 * 60)) % 24);
       const days = Math.floor(time / (1000 * 60 * 60 * 24));
-      setTimer({ days, hours, minutes, seconds });
+      setTimer([
+        { text: "jours", time: days },
+        { text: "heures", time: hours },
+        { text: "minutes", time: minutes },
+        { text: "secondes", time: seconds },
+      ]);
     }
   };
 
-  return <div>Farouche {timer.seconds}</div>;
+  return (
+    <div>
+      <div>Bientôt...</div>
+      <div>
+        {timer.map((oneCounter) => {
+          return (
+            <div>
+              <div> {oneCounter.time} </div> <div> {oneCounter.text}</div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
 };
 
 export default CountDown;
