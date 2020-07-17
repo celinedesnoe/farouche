@@ -31,7 +31,7 @@ const CountDown = ({ date }) => {
   };
 
   return (
-    <div className="container">
+    <div className="">
       <div className="counter-container row">
         {timer.map((oneCounter) => {
           return (
