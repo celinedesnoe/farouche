@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-
+import React from "react";
+import BackButton from "./BackButton";
 const Definition = ({}) => {
   return (
     <div className="definition">
-      <div classNAme="text-center">
+      <div className="title">Définition</div>
+      <div className="">
         <b>farouche</b> <i>adjectif</i> (masculin et féminin identiques)
         <div>\fa.ʁuʃ\</div>
         <div>
@@ -13,9 +13,7 @@ const Definition = ({}) => {
           particulier) Se dit d’une femme qui refuse qu’on lui fasse la cour.
         </div>
       </div>
-      <Link to="/">
-        <div>Retour</div>
-      </Link>
+      <BackButton />
     </div>
   );
 };

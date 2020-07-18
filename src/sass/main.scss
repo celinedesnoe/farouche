@@ -1,7 +1,7 @@
 @import "./vendors/bootstrap";
 
 .app {
-  height: 100vh;
+  min-height: 100vh;
   background-image: url("/landscape.jpg");
   background-position: center;
   background-repeat: no-repeat;
@@ -14,9 +14,20 @@ body {
 
 a {
   color: black;
+  transition: 0.2s;
   &:hover {
     text-decoration: none;
-    color: rgb(153, 160, 135);
+    color: white;
+  }
+  &.back-button {
+    background-color: white;
+    border-radius: 4px;
+    padding: 8px 16px;
+    margin-top: 32px;
+
+    &:hover {
+      color: rgb(65, 149, 151);
+    }
   }
 }
 
@@ -33,13 +44,8 @@ a {
 .navigation-page {
   margin: 20px;
   font-size: 32px;
-  transition: 0.3s;
   text-align: center;
-
-  &:hover {
-    color: rgb(153, 160, 135);
-    cursor: pointer;
-  }
+  padding: 0px !important;
 }
 
 .logo-name {
@@ -77,15 +83,24 @@ a {
   transition: 0.3s;
 
   &:hover {
-    color: rgb(153, 160, 135);
+    color: white;
     cursor: pointer;
   }
 }
 
-.definition {
+.definition,
+.description,
+.contact {
   font-size: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  padding: 10% 20%;
+}
+
+.title {
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 20px;
 }

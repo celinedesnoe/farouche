@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 
@@ -19,13 +19,13 @@ const WelcomePage = () => {
       </div>
       <div className="navigation row">
         <Link to="/en-savoir-plus">
-          <div className="navigation-page col-sm">En savoir plus</div>
+          <div className="col-4-sm navigation-page ">En savoir plus</div>
         </Link>
         <Link to="/qui-sommes-nous">
-          <div className="navigation-page col-sm">Qui sommes-nous</div>
+          <div className="col-4-sm navigation-page ">Qui sommes-nous</div>
         </Link>
         <Link to="/contact">
-          <div className="navigation-page col-sm">Contact</div>
+          <div className="col-4-sm navigation-page ">Contact</div>
         </Link>
       </div>
 

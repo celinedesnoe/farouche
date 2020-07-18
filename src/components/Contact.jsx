@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
+import BackButton from "./BackButton";
 
 const Contact = ({}) => {
   const contacts = [
@@ -11,20 +11,21 @@ const Contact = ({}) => {
   ];
 
   return (
-    <div className="">
-      <Link to="/">
-        <ul>
-          {contacts.map((contact) => {
-            return <li>{contact}</li>;
-          })}
-        </ul>
+    <div className="contact">
+      <div className="title">Contact</div>
+      <ul>
+        {contacts.map((contact) => {
+          return (
+            <li>
+              <a href={`mailto:${contact}`}>{contact}</a>
+            </li>
+          );
+        })}
+      </ul>
 
-        <div>
-          <div>Adresse</div>
-          <div>7, rue François Miron - 75004 Paris </div>
-        </div>
-        <div>Retour</div>
-      </Link>
+      <div className="title">Adresse</div>
+      <div>7, rue François Miron - 75004 Paris </div>
+      <BackButton />
     </div>
   );
 };
